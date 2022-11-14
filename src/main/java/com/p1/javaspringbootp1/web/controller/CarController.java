@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-public class ProductController {
+public class CarController {
 
 // -------------- ATTRIBUTE(s) -------------- //
 
@@ -31,7 +31,8 @@ public class ProductController {
 
     @GetMapping("/Cars/{id}")
     public Car showOneCar(@PathVariable int id) {
-        return new Car(id, "Lotus");
+        Car car = new Car(id, new String("Seven"), new String("Lotus Cars"), new String("Blue"));
+        return car;
     }
 
 }
