@@ -40,8 +40,7 @@ public class CarController {
 
     @GetMapping("/Cars/{id}")
     public Car showOneCar(@PathVariable int id) {
-        Car car = new Car(id, new String("Seven"), new String("Lotus Cars"), new String("Blue"));
-        return car;
+        return carDao.findById(id);
     }
 
 }
