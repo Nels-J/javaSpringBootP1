@@ -48,7 +48,7 @@ public class Car {
     }
 
     public void setMake(String make) {
-        this.model = make;
+        this.make = make;
     }
 
     public String getColor() {
