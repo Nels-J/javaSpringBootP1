@@ -26,17 +26,17 @@ public class CarController {
 
     // --------------- METHODS(s) --------------- //
 
-    @GetMapping("/Cars")
+    @GetMapping("/cars")
     public List<Car> carsList() {
         return this.serviceCar.findAll();
     }
 
-    @GetMapping("/Cars/{id}")
+    @GetMapping("/cars/{id}")
     public Car showOneCar(@PathVariable int id) {
         return this.serviceCar.findById(id);
     }
 
-    @PostMapping("/Cars")
+    @PostMapping("/cars")
     public Car addProduct(@RequestBody Car car) {
         return serviceCar.save(car);
         //todo manage status to respect http protocol eg. 201 rather than 200
