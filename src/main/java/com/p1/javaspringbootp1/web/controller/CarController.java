@@ -7,9 +7,7 @@ package com.p1.javaspringbootp1.web.controller;
 
 import com.p1.javaspringbootp1.dao.CarDao;
 import com.p1.javaspringbootp1.model.Car;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -41,6 +39,11 @@ public class CarController {
     @GetMapping("/Cars/{id}")
     public Car showOneCar(@PathVariable int id) {
         return this.carDao.findById(id);
+    }
+
+    @PostMapping("/Cars")
+    public Car addProduct(@RequestBody Car car) {
+        return carDao.save(car);
     }
 
 }
