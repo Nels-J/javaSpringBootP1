@@ -6,30 +6,30 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/*
  * @author nelsj
  * @Date 14/11/2022
  */
 
 @Repository
 public class CarDaoImpl implements CarDao {
-// -------------- ATTRIBUTE(s) -------------- //
+    // -------------- ATTRIBUTE(s) -------------- //
+    private List<Car> cars;
 
-
-// ------------- CONSTRUCTOR(s) ------------- //
+    // ------------- CONSTRUCTOR(s) ------------- //
+    public CarDaoImpl() {
+        this.cars = new ArrayList<>();
+        this.cars.add(new Car(1, "Seven", "Lotus", "British Green"));
+        this.cars.add(new Car(2, "Seven R", "Lotus", "French Blue"));
+        this.cars.add(new Car(3, "Seven LX", "Lotus", "Art color"));
+    }
 
 
 // --------- GETTER(s) & SETTER(s) ---------- //
 
 
     // --------------- METHODS(s) --------------- //
-    public static List<Car> cars = new ArrayList<>();
 
-    static {
-        cars.add(new Car(1, "Seven", "Lotus", "British Green"));
-        cars.add(new Car(2, "Seven R", "Lotus", "French Blue"));
-        cars.add(new Car(3, "Seven LX", "Lotus", "Art color"));
-    }
 
     @Override
     public List<Car> findAll() {
@@ -48,6 +48,7 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public Car save(Car car) {
-        return null;
+        this.cars.add(car);
+        return car;
     }
 }
