@@ -24,12 +24,9 @@ public class CarDaoImpl implements CarDao {
         this.cars.add(new Car(3, "Seven LX", "Lotus", "Art color"));
     }
 
-
 // --------- GETTER(s) & SETTER(s) ---------- //
 
-
     // --------------- METHODS(s) --------------- //
-
 
     @Override
     public List<Car> findAll() {
