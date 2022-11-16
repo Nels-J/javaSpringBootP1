@@ -12,7 +12,11 @@ public interface CarDao {
 
     // --------------- METHODS(s) to implement --------------- //
     List<Car> findAll();
+
     Car findById(int id);
+
     Car save(Car car);
+
+    void deleteOneCar(int id);
 
 }

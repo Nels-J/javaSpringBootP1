@@ -35,7 +35,11 @@ public class ServiceCar {
     }
 
     public Car save(Car car) {
-        return carDao.save(car);
+        return this.carDao.save(car);
+    }
+
+    public void deleteOneCar(int id) {
+        this.carDao.deleteOneCar(id);
     }
 
 }
