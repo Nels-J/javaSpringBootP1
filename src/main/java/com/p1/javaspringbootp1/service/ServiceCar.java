@@ -42,4 +42,8 @@ public class ServiceCar {
         this.carDao.deleteOneCar(id);
     }
 
+    public Car updateOneCar(Car car, int id){
+        return this.carDao.updateOneCar(car, id);
+    }
+
 }

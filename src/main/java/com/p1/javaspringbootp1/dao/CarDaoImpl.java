@@ -53,4 +53,12 @@ public class CarDaoImpl implements CarDao {
     public void deleteOneCar(int id) {
         cars.removeIf(car -> car.getId() == id);
     }
+
+    @Override
+    public Car updateOneCar(Car car, int id) {
+        findById(id).setModel(car.getModel());
+        findById(id).setMake(car.getMake());
+        findById(id).setColor(car.getColor());
+        return car;
+    }
 }

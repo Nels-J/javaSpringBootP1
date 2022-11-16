@@ -19,4 +19,6 @@ public interface CarDao {
 
     void deleteOneCar(int id);
 
+    Car updateOneCar(Car car, int id);
+
 }

@@ -8,7 +8,6 @@ package com.p1.javaspringbootp1.web.controller;
 import com.p1.javaspringbootp1.model.Car;
 import com.p1.javaspringbootp1.service.ServiceCar;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -54,4 +53,8 @@ public class CarController {
         return new ResponseEntity("Delete OK", HttpStatus.OK);
     }
 
+    @PutMapping("cars/{id}")
+    public Car updateOneCar(@RequestBody Car car, @PathVariable int id) {
+        return this.serviceCar.updateOneCar(car,id);
+    }
 }
